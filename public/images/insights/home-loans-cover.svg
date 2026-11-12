@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#0D2748"/>
+  <rect x="48" y="48" width="1104" height="579" rx="18" stroke="#C8A34D" stroke-opacity="0.35" stroke-width="2"/>
+  <g transform="translate(760 175)">
+    <path d="M160 20 L310 130 V320 H10 V130 L160 20 Z" fill="#163A66" stroke="#C8A34D" stroke-width="2.5"/>
+    <rect x="118" y="200" width="84" height="120" rx="4" fill="#0F2D52" stroke="#C8A34D" stroke-opacity="0.8" stroke-width="2"/>
+    <rect x="65" y="140" width="44" height="44" rx="4" fill="#C8A34D" fill-opacity="0.25" stroke="#C8A34D"/>
+    <rect x="211" y="140" width="44" height="44" rx="4" fill="#C8A34D" fill-opacity="0.25" stroke="#C8A34D"/>
+  </g>
+  <rect x="120" y="130" width="175" height="36" rx="18" fill="#C8A34D" fill-opacity="0.15" stroke="#C8A34D" stroke-opacity="0.6"/>
+  <text x="148" y="153" fill="#E6C97D" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">HOME LOANS</text>
+  <text x="120" y="252" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">How Banks Assess</text>
+  <text x="120" y="308" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">Home Loan Eligibility</text>
+  <text x="120" y="370" fill="#B9CBE0" font-family="DM Sans, Arial, sans-serif" font-size="22">Income Capacity, Credit Discipline &amp; LTV Norms</text>
+  <path d="M120 490 H540" stroke="#C8A34D" stroke-width="2" stroke-opacity="0.5"/>
+  <text x="120" y="555" fill="#C8A34D" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5">NEXA INSIGHTS • MR. GOPAL ARORA</text>
+</svg>

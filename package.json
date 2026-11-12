@@ -1,0 +1,35 @@
+{
+  "name": "nexa-fund-advisor-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Corporate website, financial calculators, blog CMS, and Google Sheets lead management system for Nexa Fund Advisor LLP.",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,gold \"node --watch server/index.js\" \"vite\"",
+    "dev:web": "vite",
+    "dev:server": "node server/index.js",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "preview": "npm run build && npm start",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dompurify": "^3.2.2",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "googleapis": "^144.0.0",
+    "helmet": "^8.0.0",
+    "lucide-react": "^0.468.0",
+    "multer": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "sanitize-html": "^2.14.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "vite": "^6.0.0"
+  }
+}

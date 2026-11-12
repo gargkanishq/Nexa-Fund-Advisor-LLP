@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#0F2D52"/>
+  <rect x="48" y="48" width="1104" height="579" rx="18" stroke="#C8A34D" stroke-opacity="0.35" stroke-width="2"/>
+  <g transform="translate(755 190)">
+    <rect x="20" y="10" width="290" height="270" rx="14" fill="#163A66" stroke="#C8A34D" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M60 220 C110 215, 165 140, 265 75" stroke="#C8A34D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M60 95 C135 125, 195 190, 265 225" stroke="#90AFD3" stroke-width="3" stroke-dasharray="8 8" stroke-linecap="round"/>
+    <circle cx="165" cy="148" r="9" fill="#FFFFFF" stroke="#C8A34D" stroke-width="3"/>
+  </g>
+  <rect x="120" y="130" width="240" height="36" rx="18" fill="#C8A34D" fill-opacity="0.15" stroke="#C8A34D" stroke-opacity="0.6"/>
+  <text x="148" y="153" fill="#E6C97D" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BANKING KNOWLEDGE</text>
+  <text x="120" y="252" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">Reducing-Balance</text>
+  <text x="120" y="308" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">Interest Explained</text>
+  <text x="120" y="370" fill="#B9CBE0" font-family="DM Sans, Arial, sans-serif" font-size="22">How Principal &amp; Interest Evolve Across EMIs</text>
+  <path d="M120 490 H540" stroke="#C8A34D" stroke-width="2" stroke-opacity="0.5"/>
+  <text x="120" y="555" fill="#C8A34D" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5">NEXA INSIGHTS • MR. GOPAL ARORA</text>
+</svg>

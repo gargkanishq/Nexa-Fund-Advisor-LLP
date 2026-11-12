@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#0F2D52"/>
+  <rect x="48" y="48" width="1104" height="579" rx="18" stroke="#C8A34D" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="960" cy="180" r="220" stroke="#C8A34D" stroke-opacity="0.16" stroke-width="1.5"/>
+  <circle cx="960" cy="180" r="145" stroke="#C8A34D" stroke-opacity="0.25" stroke-width="1.5"/>
+  <path d="M120 490 H540" stroke="#C8A34D" stroke-width="2" stroke-opacity="0.5"/>
+  <rect x="120" y="130" width="220" height="36" rx="18" fill="#C8A34D" fill-opacity="0.15" stroke="#C8A34D" stroke-opacity="0.6"/>
+  <text x="148" y="153" fill="#E6C97D" font-family="Manrope, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">BALANCE TRANSFER</text>
+  <text x="120" y="252" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">Refinancing Your</text>
+  <text x="120" y="308" fill="#FFFFFF" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700">Existing Home Loan</text>
+  <text x="120" y="370" fill="#B9CBE0" font-family="DM Sans, Arial, sans-serif" font-size="22">Comparing Rate Spread, Tenure &amp; Transfer Costs</text>
+  <g transform="translate(760 270)">
+    <rect x="0" y="95" width="90" height="175" rx="8" fill="#173D6B" stroke="#C8A34D" stroke-opacity="0.4"/>
+    <rect x="125" y="45" width="90" height="225" rx="8" fill="#1D4B82" stroke="#C8A34D" stroke-opacity="0.65"/>
+    <rect x="250" y="125" width="90" height="145" rx="8" fill="#C8A34D"/>
+    <path d="M35 65 L170 20 L295 85" stroke="#E6C97D" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="35" cy="65" r="7" fill="#E6C97D"/>
+    <circle cx="170" cy="20" r="7" fill="#E6C97D"/>
+    <circle cx="295" cy="85" r="7" fill="#FFFFFF"/>
+  </g>
+  <text x="120" y="555" fill="#C8A34D" font-family="Manrope, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.5">NEXA INSIGHTS • MR. GOPAL ARORA</text>
+</svg>
