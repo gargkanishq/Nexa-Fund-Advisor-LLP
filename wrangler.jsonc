@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "nexa-fund-advisor",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": [
+      "/api/*",
+      "/uploads/*",
+      "/sitemap.xml"
+    ]
+  },
+  "vars": {
+    "SITE_URL": "https://nexafundadvisor.com",
+    "GOOGLE_SHEET_NAME": "Leads"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "nexa-fund-db",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "UPLOADS",
+      "bucket_name": "nexa-uploads"
+    }
+  ]
+}
