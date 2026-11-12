@@ -10,8 +10,8 @@ This guide explains how to deploy the Nexa Fund Advisor website to Cloudflare us
 
 - **Frontend (`dist/`):** Hosted on **Cloudflare Workers Static Assets** (unlimited free bandwidth, automatic SPA routing for all React pages).
 - **Backend API (`/api/*`, `/uploads/*`, `/sitemap.xml`):** Runs on a single **Cloudflare Worker** (`worker/index.js`).
-- **Blog Posts, Rate Limiting & Deduplication:** Stored persistently in **Cloudflare D1** (`nexa-fund-db` SQLite database), pre-seeded with your 4 existing articles.
-- **Uploaded Blog Cover Images:** Stored persistently in **Cloudflare R2 Standard storage** (`nexa-uploads` bucket), automatically compressed on upload in `/admin` and deleted from R2 when replaced or when a post is deleted.
+- **Blog Posts, Rate Limiting & Deduplication:** Stored persistently in **Cloudflare D1** (`nexa-production-db` SQLite database), pre-seeded with your 4 existing articles.
+- **Uploaded Blog Cover Images:** Stored persistently in **Cloudflare R2 Standard storage** (`nexa-website-media` bucket), automatically compressed on upload in `/admin` and deleted from R2 when replaced or when a post is deleted.
 - **Customer Enquiries:** Validated and written directly to **Google Sheets** using a Service Account (`fetch` + Web Crypto RS256 JWT). If Google Sheets is unavailable or unconfigured, the API logs the issue and returns a clear error instead of failing silently.
 
 ---
@@ -27,31 +27,28 @@ This guide explains how to deploy the Nexa Fund Advisor website to Cloudflare us
 
 ---
 
-## Step 2: Create the D1 Database and Migrate Your 4 Existing Blog Articles
+## Step 2: Configure D1 and Migrate Your 4 Existing Blog Articles
 
-1. Create the D1 database:
+Your D1 database is already created: `nexa-production-db`.
+1. Check the database details and UUID:
    ```powershell
-   npx wrangler d1 create nexa-fund-db
+   npx wrangler d1 list
    ```
-2. Copy the printed `database_id` (UUID) into `wrangler.jsonc` under `d1_databases[0].database_id`.
+2. Copy your `nexa-production-db` database UUID into `wrangler.jsonc` under `d1_databases[0].database_id`.
 3. Create the tables and migrate the 4 initial blog articles into your **remote** D1 database:
    ```powershell
-   npx wrangler d1 execute nexa-fund-db --remote --file=./schema.sql
-   npx wrangler d1 execute nexa-fund-db --remote --file=./seed.sql
+   npx wrangler d1 execute nexa-production-db --remote --file=./schema.sql
+   npx wrangler d1 execute nexa-production-db --remote --file=./seed.sql
    ```
 
 ---
 
-## Step 3: Activate Cloudflare R2 (Standard Tier, Free Allowance Target)
+## Step 3: Verify Cloudflare R2 (`nexa-website-media`)
 
-> **Billing Safety Note:** Cloudflare requires a payment card on file to enable R2, even though usage below **10 GB/month storage, 1M Class A writes/month, 10M Class B reads/month, and internet egress** is free. Free allowances are **not** a hard spending cap—always set billing notifications (Step 6) and never enable Infrequent Access storage or paid Image Transformations.
-
-1. In the Cloudflare Dashboard sidebar, click **R2 Object Storage**, add your payment card to unlock R2, and do **not** enable any paid add-ons.
-2. Create the bucket (Standard storage class only):
-   ```powershell
-   npx wrangler r2 bucket create nexa-uploads
-   ```
-3. *(Recommended)* Set an **R2 Lifecycle / Storage verification check** in **R2 -> nexa-uploads -> Settings**: verify default storage class is **Standard** (not Infrequent Access). Do **not** attach paid Image Resizing/Transformations or custom paid add-ons.
+Your R2 bucket is already created: `nexa-website-media`.
+- **Public access:** Disabled (private).
+- **Default Storage Class:** Standard (free tier eligible; never select Infrequent Access).
+- Images are served privately through your Worker endpoint `/uploads/:key` under `nexafundadvisor.com`. No public bucket URL or paid image resizing add-ons needed.
 
 ---
 
@@ -99,13 +96,13 @@ Verify on the printed `https://nexa-fund-advisor.<subdomain>.workers.dev` URL:
 ## Step 6: Monitor Usage & Prevent Unexpected Charges
 
 Check these screens once a month in **Cloudflare Dashboard**:
-1. **R2 Object Storage -> Overview & `nexa-uploads`:**
+1. **R2 Object Storage -> Overview & `nexa-website-media`:**
    - Verify **Storage** stays well below **10 GB** (images are auto-optimized in `/admin` and capped at 2 MB, and deleted from R2 when replaced/deleted).
    - Verify **Class A operations** (writes/lists) stay far below **1,000,000/month**.
    - Verify **Class B operations** (reads) stay far below **10,000,000/month** (served with `Cache-Control: immutable` so Cloudflare's CDN serves repeat hits without hitting R2).
 2. **Compute & Workers -> Workers & Pages -> `nexa-fund-advisor` -> Metrics:**
    - Free tier allows **100,000 Worker requests/day**; static pages and `/images/*` do not consume Worker requests.
-3. **Storage & Databases -> D1 SQL Database -> `nexa-fund-db` -> Metrics:**
+3. **Storage & Databases -> D1 SQL Database -> `nexa-production-db` -> Metrics:**
    - Free tier allows **5,000,000 row reads/day**, **100,000 row writes/day**, and **5 GB total**.
 4. **Manage Account -> Billing -> Notifications:**
    - Create **Usage Based Billing Notifications** for **R2 Storage**, **R2 Class A**, **R2 Class B**, and **Workers/D1** at low thresholds (e.g., 50% and 80% of free tier) so you receive an email well before any paid overage could occur.

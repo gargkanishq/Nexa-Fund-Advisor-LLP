@@ -127,17 +127,27 @@ export async function getUploadedImageResponse(env, request, rawKey) {
     return new Response('Not found.', { status: 404 });
   }
 
-  const object = await env.UPLOADS.get(rawKey);
+  const ifNoneMatch = request.headers.get('if-none-match');
+
+  let object;
+  try {
+    object = await env.UPLOADS.get(rawKey, {
+      onlyIf: request.headers,
+    });
+  } catch {
+    object = await env.UPLOADS.get(rawKey);
+  }
+
   if (!object) {
     return new Response('Image not found.', { status: 404 });
   }
 
-  const ifNoneMatch = request.headers.get('if-none-match');
-  if (ifNoneMatch && object.httpEtag && ifNoneMatch === object.httpEtag) {
+  // If R2 evaluated onlyIf and returned a null body (or manual match), return 304 Not Modified
+  if (!object.body || (ifNoneMatch && object.httpEtag && ifNoneMatch === object.httpEtag)) {
     return new Response(null, {
       status: 304,
       headers: {
-        ETag: object.httpEtag,
+        ETag: object.httpEtag || ifNoneMatch,
         'Cache-Control': 'public, max-age=31536000, immutable',
       },
     });

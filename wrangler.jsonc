@@ -20,14 +20,14 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "nexa-fund-db",
-      "database_id": "00000000-0000-0000-0000-000000000000"
+      "database_name": "nexa-production-db",
+      "database_id": "9ba1230a-fe66-4e3d-a1ab-144ef25c093d"
     }
   ],
   "r2_buckets": [
     {
       "binding": "UPLOADS",
-      "bucket_name": "nexa-uploads"
+      "bucket_name": "nexa-website-media"
     }
   ]
 }
