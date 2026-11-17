@@ -52,6 +52,24 @@ export const BANKING_PARTNERS = [
     bgTint: '#FFFFFF',
   },
   {
+    id: 'pnb-hf',
+    name: 'PNB Housing Finance',
+    logo: '/images/Bank Logo/PNB-HF_logo.jpg',
+    bgTint: '#FFFFFF',
+  },
+  {
+    id: 'bob',
+    name: 'Bank of Baroda',
+    logo: '/images/Bank Logo/BOB_logo.png',
+    bgTint: '#FFFFFF',
+  },
+  {
+    id: 'canara-bank',
+    name: 'Canara Bank',
+    logo: '/images/Bank Logo/CanaraBank_logo.jpg',
+    bgTint: '#FFFFFF',
+  },
+  {
     id: 'iob',
     name: 'Indian Overseas Bank',
     logo: '/images/Bank Logo/IOB_logo.png',
@@ -61,25 +79,95 @@ export const BANKING_PARTNERS = [
     id: 'indian-bank',
     name: 'Indian Bank',
     logo: '/images/Bank Logo/IndianBank_logo.jpg',
-    bgTint: '#163A82',
+    bgTint: '#FFFFFF',
   },
   {
     id: 'uco',
     name: 'UCO Bank',
     logo: '/images/Bank Logo/UCO_logo.jpg',
-    bgTint: '#FFF200',
+    bgTint: '#FFFFFF',
   },
   {
     id: 'boi',
     name: 'Bank of India',
     logo: '/images/Bank Logo/BOI_logo.jpg',
-    bgTint: '#0076BD',
+    bgTint: '#FFFFFF',
+  },
+  {
+    id: 'bank-of-maharashtra',
+    name: 'Bank of Maharashtra',
+    logo: '/images/Bank Logo/Bank-of-Maharashtra_Logo.jpg',
+    bgTint: '#FFFFFF',
+  },
+  {
+    id: 'ubi',
+    name: 'Union Bank of India',
+    logo: '/images/Bank Logo/UBI_logo.png',
+    bgTint: '#FFFFFF',
+  },
+  {
+    id: 'lic-hf',
+    name: 'LIC Housing Finance',
+    logo: '/images/Bank Logo/LIC_logo.jpg',
+    bgTint: '#FFFFFF',
   },
   {
     id: 'additional-banks',
     name: 'Additional Lending Institutions',
     logo: '/images/Bank Logo/ManyMoreBanks_logo.jpg',
-    bgTint: '#0A5E91',
+    bgTint: '#FFFFFF',
+  },
+];
+
+export const BUSINESS_ACHIEVEMENTS = [
+  {
+    id: 'loan-volume',
+    targetValue: 8,
+    prefix: '₹',
+    suffix: ' Crore+',
+    label: 'Loan Amount Facilitated',
+    description: 'Structured home financing & institutional borrowing solutions',
+  },
+  {
+    id: 'families-served',
+    targetValue: 30,
+    prefix: '',
+    suffix: '+',
+    label: 'Families Served',
+    description: 'Guided with personalized support through loan sanction & disbursement',
+  },
+];
+
+export const CUSTOMER_TESTIMONIALS = [
+  {
+    id: 'testimonial-1',
+    clientName: 'Rajesh Sharma',
+    clientProfession: 'Senior IT Professional',
+    clientLocation: 'Rohini, Delhi',
+    loanType: 'Home Loan Facilitation',
+    bankType: 'Public Sector Bank',
+    quote:
+      'The entire paperwork and banking process was handled with exceptional clarity. Having former public sector bank management experience on our side helped avoid repetitive bank visits and cleared our file with zero friction.',
+  },
+  {
+    id: 'testimonial-2',
+    clientName: 'Amit Verma',
+    clientProfession: 'Finance Professional',
+    clientLocation: 'Delhi NCR',
+    loanType: 'Home Loan Balance Transfer',
+    bankType: 'Public Sector Bank',
+    quote:
+      'We wanted to review whether transferring our ongoing home loan made financial sense. Nexa gave us an objective net-savings calculation after all transfer charges before submitting a single document. Truly transparent.',
+  },
+  {
+    id: 'testimonial-3',
+    clientName: 'Vikram Malhotra',
+    clientProfession: 'Business Owner',
+    clientLocation: 'Delhi',
+    loanType: 'Housing & Property Finance',
+    bankType: 'Public Sector Bank',
+    quote:
+      'Documentation scrutiny before submitting to the bank was thorough. Mr. Gopal Arora’s procedural guidance ensured our income and property documents moved smoothly through bank appraisal to disbursement.',
   },
 ];
 

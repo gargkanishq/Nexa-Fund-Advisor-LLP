@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import PageHead from '../components/PageHead';
 import BankPartnersCarousel from '../components/BankPartnersCarousel';
+import AchievementStats from '../components/AchievementStats';
+import CustomerTestimonials from '../components/CustomerTestimonials';
 import InsightCard from '../components/InsightCard';
 import {
   COMPANY,
@@ -152,6 +154,9 @@ export default function HomePage() {
           </aside>
         </div>
       </section>
+
+      {/* Section 2B: Business Achievement Milestones */}
+      <AchievementStats />
 
       {/* Section 3: Editorial Philosophy Quote Banner (replaces repeating boxes) */}
       <section className="quote-banner" aria-label="Advisory Philosophy">
@@ -358,6 +363,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Section 9B: Customer Testimonials */}
+      <CustomerTestimonials />
 
       {/* Section 10: Free Consultation */}
       <section className="section section-tint" aria-labelledby="transparency-heading">

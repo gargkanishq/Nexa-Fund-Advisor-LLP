@@ -11,12 +11,12 @@ export default function BankPartnersCarousel() {
     <section className="section section-ivory" aria-labelledby="banking-partners-heading">
       <div className="container">
         <div className="section-header" style={{ marginBottom: '28px' }}>
-          <div className="eyebrow eyebrow-navy">Banking Empanelment</div>
+          <div className="eyebrow eyebrow-navy">Banking &amp; Lending Network</div>
           <h2 id="banking-partners-heading" style={{ marginBottom: '10px' }}>
-            Banking Relationships That Open Doors
+            Banking &amp; Lending Partners
           </h2>
           <p className="lead-text" style={{ marginBottom: 0 }}>
-            Our banking partnerships help us connect customers with established lending institutions and explore suitable home financing options.
+            Connecting homebuyers and borrowers with established public sector banks and leading housing finance institutions.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function BankPartnersCarousel() {
               color: 'var(--muted)',
             }}
           >
-            Empanelled for home loan services with multiple public sector banks. Loan approval remains subject to lender eligibility.
+            Empanelled for home loan services with multiple public sector banks and facilitating loan applications across partner lending institutions. All loan approvals and terms remain subject to individual lender credit appraisal and eligibility criteria.
           </p>
         </div>
       </div>

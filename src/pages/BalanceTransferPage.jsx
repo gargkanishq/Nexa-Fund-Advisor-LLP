@@ -32,6 +32,10 @@ const BT_FAQS = [
     q: 'Is there a fee to evaluate my existing home loan?',
     a: 'No. Preliminary home loan balance transfer consultations and savings estimates are free.',
   },
+  {
+    q: 'Do you charge any fees?',
+    a: 'We do not charge any fee from customers for Home Loans and Car Loans. For other loan segments, a nominal service fee may apply.',
+  },
 ];
 
 export default function BalanceTransferPage() {

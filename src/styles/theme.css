@@ -372,6 +372,10 @@ textarea {
   color: var(--navy-mid);
 }
 
+.eyebrow-gold {
+  color: var(--gold-light);
+}
+
 .section {
   padding: 80px 0;
 }
@@ -1522,6 +1526,253 @@ textarea {
 }
 
 /* ==========================================================================
+   ACHIEVEMENT MILESTONES (HOMEPAGE)
+   ========================================================================== */
+.section-achievements {
+  background: linear-gradient(135deg, var(--navy-deep) 0%, #102A4C 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-achievements h2 {
+  color: var(--white);
+}
+
+.section-achievements .lead-text {
+  color: #B5C6DA;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(200, 163, 77, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.achievement-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.achievement-number {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.achievement-label {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.achievement-desc {
+  font-size: 0.92rem;
+  color: #B5C6DA;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   CUSTOMER TESTIMONIALS (HOMEPAGE)
+   ========================================================================== */
+.testimonials-section {
+  position: relative;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 0;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(200, 163, 77, 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.testimonial-bank-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-tint);
+  color: var(--navy);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.testimonial-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.testimonial-quote-icon {
+  color: rgba(200, 163, 77, 0.35);
+  flex-shrink: 0;
+}
+
+.testimonial-quote {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ink);
+  font-style: italic;
+  margin: 0 0 24px;
+  flex-grow: 1;
+}
+
+.testimonial-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.testimonial-client-info {
+  min-width: 0;
+}
+
+.testimonial-client-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--navy-deep);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.testimonial-client-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.testimonial-loan-badge {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--navy-mid);
+  background: var(--bg-tint);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+  border: 1px solid var(--line);
+}
+
+/* ==========================================================================
+   STICKY CONTACT DOCK (CALL + WHATSAPP)
+   ========================================================================== */
+.sticky-contact-dock {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sticky-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: 0 10px 24px rgba(9, 30, 58, 0.22);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.sticky-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(9, 30, 58, 0.3);
+}
+
+.sticky-call-btn {
+  background: var(--navy);
+  color: var(--gold-light);
+  border: 2px solid var(--gold);
+}
+
+.sticky-call-btn:hover {
+  background: var(--navy-deep);
+  color: var(--white);
+}
+
+.sticky-whatsapp-btn {
+  background: #1B7A43;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.sticky-whatsapp-btn:hover {
+  background: #156537;
+}
+
+/* ==========================================================================
    FLOATING WHATSAPP & FOOTER
    ========================================================================== */
 .whatsapp-fab {
@@ -1659,6 +1910,14 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
   }
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1693,6 +1952,21 @@ textarea {
   .whatsapp-fab {
     padding: 14px;
   }
+  .sticky-contact-dock {
+    right: 14px;
+    bottom: 14px;
+    gap: 8px;
+  }
+  .sticky-contact-btn {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+  .achievement-card {
+    padding: 28px 20px;
+  }
+  .testimonial-card {
+    padding: 24px 18px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1704,5 +1978,11 @@ textarea {
   }
   .carousel-track {
     animation-duration: 42s;
+  }
+  .achievement-card,
+  .testimonial-card,
+  .sticky-contact-btn {
+    transition: none !important;
+    transform: none !important;
   }
 }

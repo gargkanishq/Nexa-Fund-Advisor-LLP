@@ -4,7 +4,7 @@ import { EnquiryModalProvider } from './context/EnquiryModalContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
-import WhatsAppButton from './components/WhatsAppButton';
+import StickyContactBar from './components/StickyContactBar';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
@@ -75,7 +75,7 @@ export default function App() {
       </main>
       <Footer />
       <EnquiryModal />
-      <WhatsAppButton />
+      <StickyContactBar />
     </EnquiryModalProvider>
   );
 }
